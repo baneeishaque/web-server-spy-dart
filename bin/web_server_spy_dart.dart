@@ -30,12 +30,10 @@ Future<void> main(List<String> arguments) async {
             // TODO : Continue Check
 
             for (String folderContent in homeFolderContents) {
-
               String folderContentAbsolutePath = '$homeFolder$folderContent';
               var folderContentTypeData = await web_server_spy_dart
                   .getFolderContentType(folderContentAbsolutePath);
               if (folderContentTypeData.status) {
-
                 switch (folderContentTypeData.data!) {
                   case FolderContentType.file:
                     print('$folderContentAbsolutePath is a file');
@@ -46,8 +44,6 @@ Future<void> main(List<String> arguments) async {
                   case FolderContentType.link:
                     print('$folderContentAbsolutePath is a link');
                     break;
-                  default:
-                    print('Error : week of backends');
                 }
               } else {
                 print('Error : week of backends');
